@@ -1,25 +1,33 @@
 # Hardware Management API
 
-A REST API built with ASP.NET Core and SQLite for managing brand data. This project was created as a portfolio project to practice building and working with HTTP APIs using C# and .NET.
+A REST API built with ASP.NET Core and SQLite for managing hardware inventory data, including RAM specifications and brand information.
+
+This project serves as a portfolio project to demonstrate my ability to build APIs using C# and .NET, handle HTTP requests, validate input, and interact with a database.
 
 ## Features
 
-- Retrieve brand/ram data
-- Create, update, and delete brands/ram
+- Retrieve brand and RAM data
+- Create, update, and delete brands and RAM records
 - Filter and sort results
 - Limit the number of returned records
 - Update resources using JSON Patch
 - Validate incoming requests and handle errors
 - Persist data using SQLite
-  
+
 ## Technologies
 
-- C#
-- ASP.NET Core Web API
-- Entity Framework Core
-- SQLite
-- Dapper
-- [TruSql](https://github.com/Indra-Putra2/TruSql)
+- **Language:** C#
+- **Framework:** ASP.NET Core Web API
+- **ORM:** Entity Framework Core
+- **Database:** SQLite
+- **Data access:** Dapper
+- **Custom library:** [TruSql](https://github.com/Indra-Putra2/TruSql)
+
+## TruSql
+
+This project also uses [TruSql](https://github.com/Indra-Putra2/TruSql), a library I developed.
+
+Including TruSql in this project demonstrates its use alongside an ASP.NET Core API and a database-backed application.
 
 ## Getting Started
 
@@ -28,13 +36,13 @@ A REST API built with ASP.NET Core and SQLite for managing brand data. This proj
 - .NET SDK compatible with the project
 - Git
 
-### Run the application
+### Installation
 
 Clone the repository:
 
 ```bash
-git clone https://github.com/Indra-Putra2/HardwareInventory.Api
-cd <repository-directory>
+git clone https://github.com/Indra-Putra2/HardwareInventory.Api.git
+cd HardwareInventory.Api
 ```
 
 Restore dependencies and run the application:
@@ -44,16 +52,22 @@ dotnet restore
 dotnet run
 ```
 
-Check the application configuration for the database path and connection string.
+Check the application configuration for the database connection string and path.
 
-## Example Request
+### API Documentation
 
-Retrieve ram data:
+If Swagger/OpenAPI is enabled, run the application and open the Swagger UI URL configured by the project to explore and test the available endpoints.
+
+## Example Requests
+
+### Retrieve RAM data
+
 ```http
 GET /api/Ram
 ```
 
 Example response:
+
 ```json
 [
   {
@@ -69,7 +83,7 @@ Example response:
     "casLatency": 36,
     "rating": 4.5,
     "reviewCount": 45,
-    "color": "['Black']",
+    "color": ["Black"],
     "price": 273.99,
     "pricePerGB": 8.56,
     "date": null,
@@ -80,7 +94,7 @@ Example response:
 ]
 ```
 
-Retrieve brand data:
+### Retrieve brand data
 
 ```http
 GET /api/Brand
@@ -97,12 +111,13 @@ Example response:
 ]
 ```
 
-
-The response above is illustrative. Actual fields and results depend on the API implementation and database contents.
+The example responses illustrate the expected response structure. Actual results depend on the database contents and API implementation.
 
 ## Purpose
 
-This project demonstrates my ability to build a REST API using C# and ASP.NET Core, work with HTTP methods and status codes, validate requests, and interact with a relational database.
+This project demonstrates my ability to develop a REST API using C# and ASP.NET Core, work with HTTP methods and status codes, validate requests, and integrate database access technologies.
+
+It also provides an opportunity to apply my own reusable library, TruSql, in a practical application.
 
 ## Future Improvements
 
