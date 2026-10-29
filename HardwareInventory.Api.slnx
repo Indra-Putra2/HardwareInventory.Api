@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="../HardwareInventoryLibrary/HardwareInventoryLibrary/HardwareInventoryLibrary.csproj" />
+  <Project Path="HardwareInventory.Api/HardwareInventory.Api.csproj" />
+</Solution>

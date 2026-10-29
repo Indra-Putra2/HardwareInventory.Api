@@ -1,0 +1,6 @@
+@rootAddress = http://localhost:5286
+
+GET {{rootAddress}}/api/Ram/
+Accept: application/json
+
+###
